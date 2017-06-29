@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ShotComponent } from './shot/shot.component';
 import { ListaShotsComponent } from './lista-shots/lista-shots.component';
+import { ShotsRoutingModule } from './shots.routing.module';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    ShotsRoutingModule
   ],
-  declarations: [ShotComponent, ListaShotsComponent]
+  declarations: [ListaShotsComponent]
 })
 export class ShotsModule { }
