@@ -10,7 +10,7 @@ import { AppRoutingModule } from './app.routing.module';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
