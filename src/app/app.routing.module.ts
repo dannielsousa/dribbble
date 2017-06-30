@@ -6,7 +6,7 @@ import { HomeComponent } from './home/home.component';
 
 const appRoutes: Routes = [ 
     { path: '', component: HomeComponent },
-    { path: 'shots', loadChildren: 'app/shots/shots.module#ShotsModule' }
+    { path: 'listarShots', loadChildren: 'app/shots/shots.module#ShotsModule' }
 ];
 
 @NgModule({

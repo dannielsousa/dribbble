@@ -1,24 +1,56 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Rx';
+import { Http, HttpModule, Response } from '@angular/http';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/toPromise';
+import { Shots } from './shots';
 
 @Injectable()
 export class ShotsService {
 
-  listaDeShots: any[];
+  listaDeShots: any;
+  lshots: any[];
+  headers: { 'X-Requested-With': 'XMLHttpRequest' }
 
-  getShots() {
+  constructor(private http: Http) { }
+
+
+  getShots(): Promise<Shots[]> {
+
+    var url = 'http://api.dribbble.com/v1/shots?access_token=2b1bda62785d323950b3a26829122a217d440ae6ddc931879f8fae57feb7d9a7';
+
+    this.listaDeShots = this.http.get(url)
+      .toPromise()
+      .then(response => response.json().data)
     return this.listaDeShots;
   }
-  
-  constructor() { 
 
-    this.listaDeShots = [
 
-      {id: 1, img: 'https://cdn.dribbble.com/users/631430/screenshots/3613742/be.gif'},
-      {id: 2, img: 'https://cdn.dribbble.com/users/585295/screenshots/3605263/2-scene1.gif'},
-      {id: 3, img: 'https://cdn.dribbble.com/users/218750/screenshots/3614025/girl.png'},
-      {id: 4, img: 'https://cdn.dribbble.com/users/997070/screenshots/3613687/best_emploiyee1.png'},
-      {id: 5, img: 'https://cdn.dribbble.com/users/952958/screenshots/3614389/style-dribbble.png'}
-    ];
+  getAllShots() {
+    var url = 'http://api.dribbble.com/v1/shots?access_token=2b1bda62785d323950b3a26829122a217d440ae6ddc931879f8fae57feb7d9a7';
+
+    return this.http.get(url)
+      .map((res: Response) => res.json().results)
+      .do((data) => { this.lshots = data; })
+      .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
+
+  getAllShots2() {
+    var url = 'http://api.dribbble.com/v1/shots?access_token=2b1bda62785d323950b3a26829122a217d440ae6ddc931879f8fae57feb7d9a7';
+     return this.http.get(url)
+                    .map(this.extractData)
+                    .catch(this.handleError);
+  }
+
+  private extractData(res: Response) {
+    let body = res.json();
+    return body.data || { };
+  }
+
+  private handleError(error: any): Promise<any> {
+    console.error('An error occurred', error); // for demo purposes only
+    return Promise.reject(error.message || error);
+  }
+
 
 }
