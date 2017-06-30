@@ -7,6 +7,8 @@
         </tr>
     </thead>
     <tbody>
+          <a class="collection-item" *ngFor="let shot of listashots" [routerLink]="['/cursos/curso', curso.id]">{{curso.nome}}</a>
+
         <tr>
             <td><img src="https://cdn.dribbble.com/users/108083/screenshots/3615320/rhymesayers_800x600_teaser.jpg" alt=""></td>
             <td><img src="https://cdn.dribbble.com/users/218750/screenshots/3614025/girl_teaser.png" alt=""></td>
