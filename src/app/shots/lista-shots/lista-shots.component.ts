@@ -1,43 +1,37 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs/Rx';
 import { ShotsService } from './../shots.service';
 import { Shots } from './../shots';
-import { Observable } from 'rxjs/Rx';
+
 
 @Component({
   selector: 'app-lista-shots',
   templateUrl: './lista-shots.component.html',
   styleUrls: ['./lista-shots.component.css']
 })
-export class ListaShotsComponent implements OnInit {
+export class ListaShotsComponent implements OnInit, OnDestroy {
 
-  listashots: any;
-  tamanho: any;
-  shotsList: any[] = [];
+  listaDeShots: any;
+  errorMessage: any;
+  shotsTeste: Subscription;
 
-  constructor(private shotService: ShotsService) {
-    //this.listashots = shotService.getAllShots();
-    //console.log(this.listashots);
-    ///this.tamanho = this.listashots
-  }
-    //this.shotService = shotService; 
-    //this.shots =shotService.getShots();
-    //this.listashots =  this.shotService.getAllShots();
-  /*console.log(this.shotService.getAllShots2()
-                   .subscribe(
-                     testeShot => this.testeShot = testeShot));
-
-   }*/
+  constructor(private shotsService: ShotsService) {}
 
   ngOnInit() {
-    //this.listashots =  this.shotService.getAllShots();
-      //.subscribe(listashots => this.shotService.initData())
-      //this.testeShot = ShotsService.ge
-      //this.shotService.getAllShots()
-      //.subscribe(shotsList => {
-      //  this.shotsList = shotsList;
-      //})
-      //console.log(this.shotsList);
-    this.listashots = this.shotService.getshots();
+
+    this.shotsTeste = this.shotsService.getShots()
+    .subscribe( 
+        listaDeShots => this.listaDeShots = listaDeShots,
+        error => this.errorMessage = <any>error
+      );
+
+      console.log( this.listaDeShots )
 
   }
+  
+
+   ngOnDestroy() {
+
+  }
+
 }

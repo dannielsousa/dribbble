@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule }    from '@angular/http';
+import { HttpModule, JsonpModule }    from '@angular/http';
 
 import { AppRoutingModule } from './app.routing.module';
 
@@ -18,7 +18,8 @@ import { ShotsService } from './shots/shots.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpModule
+    HttpModule,
+    JsonpModule 
   ],
   providers: [ShotsService],
   bootstrap: [AppComponent]

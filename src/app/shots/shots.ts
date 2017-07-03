@@ -1,5 +1,3 @@
 export class Shots {
-    constructor(
-        linkShot: string 
-    ){}
+    linkShot: any[] 
 }
