@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs/Rx';
 import { ShotsService } from './../shots.service';
 import { Shots } from './../shots';
@@ -15,7 +16,11 @@ export class ListaShotsComponent implements OnInit, OnDestroy {
   errorMessage: any;
   shotsTeste: Subscription;
 
-  constructor(private shotsService: ShotsService) {}
+  constructor(
+    private shotsService: ShotsService,
+    private router: Router
+  ) {}
+
 
   ngOnInit() {
 
@@ -24,13 +29,11 @@ export class ListaShotsComponent implements OnInit, OnDestroy {
         listaDeShots => this.listaDeShots = listaDeShots,
         error => this.errorMessage = <any>error
       );
-
-      console.log( this.listaDeShots )
-
+      console.log(this.listaDeShots);
   }
-  
 
    ngOnDestroy() {
+     this.shotsTeste.unsubscribe();
 
   }
 

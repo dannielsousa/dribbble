@@ -1,29 +1,9 @@
-<table class="bordered centered responsive-table">
-    <thead>
-        <tr>
-            <th>Shot</th>
-            <th>Shot</th>
-            <th>Shot</th>
-        </tr>
-    </thead>
-    <tbody>
-        
+<div class="row">
+    <div class="col m4" *ngFor="let item of listaDeShots">
+        <div class="borda">
+            <img class="circle" src="{{item.images.normal}}" (click)="goDetail()"/>
+            <input type="hidden" name="" value="{{item.images.normal}}">
+        </div>
+    </div>
+</div>
 
-        <tr ng-repeat="item in listaDeShots">
-            <td>{{item}}</td>
-        </tr>
-        <!--  <a class="collection-item" *ngFor="let shot of listashots" [routerLink]="['/cursos/curso', curso.id]">{{curso.nome}}</a>
-
-        <tr>
-            <td>Shot</td>
-            <td>Shot</td>
-            <td>Shot</td>
-        </tr>
-        <tr>
-            <td>Shot</td>
-            <td>Shot</td>
-            <td>Shot</td>
-        </tr>-->
-    </tbody>
- 
-</table>
