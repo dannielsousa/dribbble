@@ -1,0 +1,15 @@
+.kz_car>a {
+    background: none !important;
+}
+
+.carousel-control .icon-next:before {
+    content: '\203a';
+    color: black  !important;
+    font-size: 52px  !important;
+}
+
+.carousel-control .icon-prev:before {
+    content: '\203a';
+    color: black  !important;
+    font-size: 52px  !important;
+    }

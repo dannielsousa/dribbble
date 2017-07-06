@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Location }                 from '@angular/common';
+
 
 @Component({
   selector: 'app-shot',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShotComponent implements OnInit {
 
-  constructor() { }
+  teste: any;
+  constructor(
+    private route: ActivatedRoute,
+    private location: Location
+  ) { }
+  
+  ngOnInit(): void {
 
-  ngOnInit() {
+    this.teste = this.route.params.forEach((params: ParamMap) => {
+    let id = +params['teste'];
+       
+    })
+
+    
   }
-
 }

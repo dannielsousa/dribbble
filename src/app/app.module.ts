@@ -9,15 +9,19 @@ import { HomeComponent } from './home/home.component';
 
 import { ShotsService } from './shots/shots.service';
 
+import { ModalComponent } from './modal/modal.component';
 
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    ModalComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    CarouselModule.forRoot(),
+    BrowserModule,
     HttpModule,
     JsonpModule 
   ],

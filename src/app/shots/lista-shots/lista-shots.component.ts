@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs/Rx';
 import { ShotsService } from './../shots.service';
 import { Shots } from './../shots';
-import { ModalDirective } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-lista-shots',
@@ -11,12 +10,11 @@ import { ModalDirective } from 'ngx-bootstrap/modal';
   styleUrls: ['./lista-shots.component.css']
   
 })
-export class ListaShotsComponent implements OnInit, OnDestroy {
+export class ListaShotsComponent implements OnInit {
  
  
   listaDeShots: any;
   errorMessage: any;
-  shotsTeste: Subscription;
 
   constructor(
     private shotsService: ShotsService,
@@ -25,17 +23,21 @@ export class ListaShotsComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
 
-    this.shotsTeste = this.shotsService.getShots()
+  this.carregaShot();
+  }
+
+
+
+  carregaShot() { 
+    this.shotsService.getShots()
     .subscribe( 
         listaDeShots => this.listaDeShots = listaDeShots,
         error => this.errorMessage = <any>error
       );
-      console.log(this.listaDeShots);
-  }
-
-   ngOnDestroy() {
-     this.shotsTeste.unsubscribe();
 
   }
-
+  gotoDetail(teste: String): void {
+    let link = ['/buscaShots', teste];
+    this.router.navigate(link);
+  }
 }
