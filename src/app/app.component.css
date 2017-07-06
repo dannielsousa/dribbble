@@ -1,9 +1,13 @@
-nav, footer { background-color: #512e1e; }
-.kz_nav a { color: rgba(0, 0, 0, 1) !important; }
-.kz_rodape img { display: inline-block; float: left; margin-bottom: 15px; width: 70px; }
+nav, footer { background-color: #4f4f58; }
+.kz_nav a { color: rgba(0, 0, 0, 1) !important; padding: 30px; }
+.kz_rodape img { display: inline-block; float: left; padding: 10px 0; width: 70px; }
 .kz_rodape span { color: rgba(0, 0, 0, 0.5); float: left; font-size: 25px; margin: 36px 0 0 25px; transition: color 2s ease-out; -webkit-transition: color 2s ease-out; -moz-transition: color 2s ease-out; }
-.kz_rodape span:hover { color: rgba(0, 0, 0, 1); cursor: none; text-decoration: underline; } 
+.kz_rodape span:hover { color: rgba(0, 0, 0, 1); cursor: default; text-decoration: underline; } 
 .kz_rodape a { color: rgba(0, 0, 0, 0.5); line-height: 1.8; margin-top: 10px; transition: color 2s ease-out; -webkit-transition: color 2s ease-out; -moz-transition: color 2s ease-out; }
 .kz_rodape a:hover { color: rgba(0, 0, 0, 1); text-decoration: underline; }
 .kz_rodape i::before{ margin-right: 10px; }
 .kz_rodape .row { margin-bottom: 0; }
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}

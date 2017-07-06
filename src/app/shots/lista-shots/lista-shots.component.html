@@ -1,8 +1,10 @@
 <div class="row">
-    <div class="col m4" *ngFor="let item of listaDeShots">
-        <div class="borda">
-            <img class="circle" src="{{item.images.normal}}" (click)="goDetail()"/>
+    <div class="col-md-4 text-center" *ngFor="let item of listaDeShots">
+        <div class="item-fora ">
+            <div class="hoverzoom">
+            <img class="item-dentro" src="{{item.images.normal}}" (click)="goDetail()"/>
             <input type="hidden" name="" value="{{item.images.normal}}">
+            </div>
         </div>
     </div>
 </div>
