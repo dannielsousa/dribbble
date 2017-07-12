@@ -10,8 +10,18 @@ import 'rxjs/add/observable/throw';
 export class ShotsService {
 
   url = 'https://api.dribbble.com/v1/shots?access_token=2b1bda62785d323950b3a26829122a217d440ae6ddc931879f8fae57feb7d9a7';
+
+  api = 'https://api.dribbble.com/v1/shots/';
+  token = 'access_token=2b1bda62785d323950b3a26829122a217d440ae6ddc931879f8fae57feb7d9a7';
+
   private headers: Headers;
   private options: RequestOptions;
+
+  getOneShot(idShot): Observable<any[]> {
+    return this.http.get(this.api + idShot + '?' + this.token)
+    .map(this.extractData)
+    .catch(this.handleError)
+  }
 
   getShots(): Observable<any[]> {
     return this.http.get(this.url)
@@ -29,7 +39,6 @@ export class ShotsService {
   }
  
   constructor(private http: Http) {
-
     this.headers = new Headers({ 'Content-Type': 'application/json' });
     this.options = new RequestOptions({ headers: this.headers });
    }

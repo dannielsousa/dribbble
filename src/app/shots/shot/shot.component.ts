@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { Location }                 from '@angular/common';
-
+import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+import { ShotsService } from './../shots.service';
 
 @Component({
   selector: 'app-shot',
@@ -10,19 +10,29 @@ import { Location }                 from '@angular/common';
 })
 export class ShotComponent implements OnInit {
 
-  teste: any;
+  shotSelect: any;
+  errorMessage: any;
+  
   constructor(
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private shotsService: ShotsService
+
   ) { }
   
-  ngOnInit(): void {
-
-    this.teste = this.route.params.forEach((params: ParamMap) => {
-    let id = +params['teste'];
-       
-    })
-
+  ngOnInit(): void { 
     
   }
+
+  buscarShot() {
+     this.shotsService.getOneShot(this.shotSelect)
+    .subscribe( 
+        shotSelect => this.shotSelect = shotSelect,
+        error => this.errorMessage = <any>error
+      );
+
+  }
+
 }
+
+    

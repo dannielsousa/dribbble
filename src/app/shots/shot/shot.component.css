@@ -1,0 +1,22 @@
+span, input, button { display: block; margin: 0 auto;     margin-bottom: 10px; }
+button { 
+    background: #e7e7e7; 
+    border: 1px solid rgba(0, 0, 0, .2); 
+    color: rgba(0, 0, 0, .2); 
+    transition: color 2s ease-out, border 2s ease-out; 
+    -webkit-transition: color 2s ease-out, border 2s ease-out; 
+    -moz-transition: color 2s ease-out, border 2s ease-out;  
+    padding: 10px 40px;
+    border-radius: 50px 
+}
+button:hover { 
+    background: #e7e7e7; 
+    border: 1px solid rgba(0, 0, 0, 1); 
+    color: rgba(0, 0, 0, 1); 
+    text-decoration: underline; 
+    
+    transition: color 2s ease-out, border 2s ease-out; 
+    -webkit-transition: color 2s ease-out, border 2s ease-out; 
+    -moz-transition: color 2s ease-out, border 2s ease-out;  
+
+}
