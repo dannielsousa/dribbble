@@ -28,16 +28,30 @@ export class ShotsService {
     .map(this.extractData)
     .catch(this.handleError)
   }
+
+  /*private handleError(error: Response) {
+    console.error(error);
+    return Observable.throw(error.json().error());
+
+  private handleError(error: Response | any) {
+    let errMsg = (error['_body']) ? JSON.parse(error['_body']).msg : 'Server error';
+    console.log(errMsg);
+    return Observable.throw(errMsg);
+  }
+
+  }*/
   
    private extractData(res: Response) {
     return res.json() || [];
   }
  
-  private handleError(error: Response | any) {
-    let errMsg = (error['_body']) ? JSON.parse(error['_body']).msg : 'Server error';
-    return Observable.throw(errMsg);
-  }
+  
+    private handleError(error: any): Promise<any> {
+      console.error('An error occurred', error); // for demo purposes only
+      return Promise.reject(error.message || error);
+    }
  
+
   constructor(private http: Http) {
     this.headers = new Headers({ 'Content-Type': 'application/json' });
     this.options = new RequestOptions({ headers: this.headers });
