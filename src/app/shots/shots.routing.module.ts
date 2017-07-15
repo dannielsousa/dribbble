@@ -7,7 +7,7 @@ import { ListaShotsComponent} from './lista-shots/lista-shots.component';
 import { ShotComponent } from './shot/shot.component';
 
 const shotsRoutes: Routes = [
-    { path: '', component: ListaShotsComponent },
+    { path: 'listaShots', component: ListaShotsComponent },
     { path: 'buscaShots', component: ShotComponent }
 ]
 

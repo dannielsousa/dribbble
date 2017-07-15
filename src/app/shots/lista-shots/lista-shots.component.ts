@@ -22,8 +22,7 @@ export class ListaShotsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-
-  this.carregaShot();
+    this.carregaShot();
   }
 
 

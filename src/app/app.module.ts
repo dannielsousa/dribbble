@@ -12,6 +12,9 @@ import { ShotsService } from './shots/shots.service';
 import { ModalComponent } from './modal/modal.component';
 
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +26,8 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     CarouselModule.forRoot(),
     BrowserModule,
     HttpModule,
-    JsonpModule 
+    JsonpModule,
+    FormsModule 
   ],
   providers: [ShotsService],
   bootstrap: [AppComponent]
