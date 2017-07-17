@@ -1,5 +1,5 @@
 
-nav, footer { 
+footer { 
 background-color: #6d695c;
 background-image:
 repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
@@ -18,29 +18,36 @@ background-size: 70px 120px;
 .kz_rodape i::before{ margin-right: 10px; }
 .kz_rodape .row { margin-bottom: 0; }
 
+.navbar {
+    border: none;
+}
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    border: none;
 }
-
-.kz_nav{ 
-    float: left;
-    width: 100%;
-}
-
-.kz_geral {
-    float: left;
-    min-height: 550px;
-    width: 100%;
-}
-
 .kz_rodape {
-        float: left;
+    float: left;
     width: 100%;
     bottom: 0px;
 }
 
-.imagemTop { 
-    background: url("./../assets/img/illidantop.jpg");
+.navigation {
+     background: rgba(26, 33, 25, 0.0);
+}
+
+.fixed {
+  position: fixed;
+  background: rgba(26, 33, 25, 0.7);
+  border: 2px solid   rgba(26, 33, 25, 0.9);;
+  z-index: 999;
+  width: 100%; 
+  transition: border 1s ease-out; 
+  -webkit-transition: border 1s ease-out; 
+  -moz-transition: border 1s ease-out; 
+}
+
+
+.imagem_menu {
+    background: url("./../assets/img/illidantopo.png");
     width: 100%;
-    min-height: 735px;
+    height: 540px;
 }
