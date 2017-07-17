@@ -9,33 +9,49 @@ import 'rxjs/add/observable/throw';
 @Injectable()
 export class ShotsService {
 
-  api = 'https://api.dribbble.com/v1/'
-  token =  'access_token=2b1bda62785d323950b3a26829122a217d440ae6ddc931879f8fae57feb7d9a7' 
   url = 'https://api.dribbble.com/v1/shots?access_token=2b1bda62785d323950b3a26829122a217d440ae6ddc931879f8fae57feb7d9a7';
-  shotid : any;
+
+  api = 'https://api.dribbble.com/v1/shots/';
+  token = 'access_token=2b1bda62785d323950b3a26829122a217d440ae6ddc931879f8fae57feb7d9a7';
+
   private headers: Headers;
   private options: RequestOptions;
 
+  getOneShot(idShot): Observable<any[]> {
+    return this.http.get(this.api + idShot + '?' + this.token)
+    .map(this.extractData)
+    .catch(this.handleError)
+  }
+
   getShots(): Observable<any[]> {
-    return this.http.get(this.api + 'shots?' + this.token)
+    return this.http.get(this.url)
     .map(this.extractData)
     .catch(this.handleError)
   }
+
+  /*private handleError(error: Response) {
+    console.error(error);
+    return Observable.throw(error.json().error());
+
+  private handleError(error: Response | any) {
+    let errMsg = (error['_body']) ? JSON.parse(error['_body']).msg : 'Server error';
+    console.log(errMsg);
+    return Observable.throw(errMsg);
+  }
+
+  }*/
   
-  getOneShot(shotid) {
-    return this.http.get(this.api + 'shots/' + shotid + '?' + this.token)
-    .map(this.extractData)
-    .catch(this.handleError)
-  }
-  private extractData(res: Response) {
+   private extractData(res: Response) {
     return res.json() || [];
   }
  
-  private handleError(error: Response | any) {
-    let errMsg = (error['_body']) ? JSON.parse(error['_body']).msg : 'Server error';
-    return Observable.throw(errMsg);
-  }
+  
+    private handleError(error: any): Promise<any> {
+      console.error('An error occurred', error); // for demo purposes only
+      return Promise.reject(error.message || error);
+    }
  
+
   constructor(private http: Http) {
     this.headers = new Headers({ 'Content-Type': 'application/json' });
     this.options = new RequestOptions({ headers: this.headers });

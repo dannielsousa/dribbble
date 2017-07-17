@@ -1,8 +1,12 @@
-import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
-import { Subscription } from 'rxjs/Rx';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import { Location } from '@angular/common';
 import { ShotsService } from './../shots.service';
-import { Shots } from './../shots';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/catch';
 
 
 @Component({
@@ -12,30 +16,35 @@ import { Shots } from './../shots';
 })
 export class ShotComponent implements OnInit {
 
-
-  shotid: any;
-  shot: any;
+  shotSelect: any;
   errorMessage: any;
-  
-  constructor(
-      private router: Router,
-      private shotService: ShotsService
-  ) {
+  shotEncontrado: any;
+  encontrado: boolean = false;
 
-   }
-  
+  constructor(
+    private route: ActivatedRoute,
+    private location: Location,
+    private shotsService: ShotsService,
+    private http: Http
+  ) { }
+
   ngOnInit(): void {
-       
+
   }
 
-  buscaShot() {
-
-  
-
-    this.shotService.getOneShot(this.shotid)
+  buscarShot() {
+    this.shotsService.getOneShot(this.shotSelect)
       .subscribe(
-        shot => this.shot = shot,
-        error => this.errorMessage = <any>error
-      )
+      shotEncontrado => this.shotEncontrado = shotEncontrado,
+      error => this.errorMessage = <any>error,
+      );
+    this.encontrado = true;
+  }
+
+  limpaCampo() {
+    this.encontrado = false;
+    this.errorMessage = null;
+    this.shotSelect = null;
   }
 }
+

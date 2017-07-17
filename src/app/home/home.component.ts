@@ -1,6 +1,5 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { ShotComponent } from './../shots/shot/shot.component';
-import { ModalComponent } from './../modal/modal.component';
 import { ShotsService } from './../shots/shots.service';
 
 

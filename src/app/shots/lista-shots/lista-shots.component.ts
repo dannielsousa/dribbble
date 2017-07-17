@@ -22,10 +22,10 @@ export class ListaShotsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+
     this.carregaShot();
+
   }
-
-
 
   carregaShot() { 
     this.shotsService.getShots()
