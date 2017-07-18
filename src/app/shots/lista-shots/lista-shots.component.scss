@@ -1,0 +1,18 @@
+@import './../../../assets/css/mains.scss';
+
+.item-dentro { border-radius: 50%; height: 150px; margin: 20px; width: 150px; }
+
+.hoverzoom > img {
+	-webkit-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+	-moz-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+	transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+
+	&:hover {
+		-webkit-transform: scale(1.4);
+		-moz-transform: scale(1.4);
+		transform: scale(1.4);
+		overflow: unset;
+		border: 3px solid rgba(0, 0, 0, 0.1);;
+		padding: 10px;
+	}
+}

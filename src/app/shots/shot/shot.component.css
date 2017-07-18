@@ -1,6 +1,0 @@
-span, input, button { display: block; margin: 0 auto;     margin-bottom: 10px; }
-button { background: #e7e7e7; border: 1px solid rgba(0, 0, 0, .2); border-radius: 50px; color: rgba(0, 0, 0, .2); padding: 10px 40px; transition: color 2s ease-out, border 2s ease-out; -webkit-transition: color 2s ease-out, border 2s ease-out; -moz-transition: color 2s ease-out, border 2s ease-out; }
-button:hover { background: #e7e7e7; border: 1px solid rgba(0, 0, 0, 1); color: rgba(0, 0, 0, 1); text-decoration: underline; transition: color 2s ease-out, border 2s ease-out;  -webkit-transition: color 2s ease-out, border 2s ease-out; -moz-transition: color 2s ease-out, border 2s ease-out;  }
-.kz_cxBusca { margin-top: 20%; }
-.kz_voltar { margin-top: 20px; }
-.mensagemErro img { height: 400px; width: 400px; }

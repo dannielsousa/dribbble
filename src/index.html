@@ -10,6 +10,7 @@
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
 </head>
 
 <body>
@@ -24,7 +25,7 @@
 
     var nav = $('.imagem_menu');   
 			$(window).scroll(function () { 
-				if ($(this).scrollTop() > 150) { 
+				if ($(this).scrollTop() >= 150) { 
 				$('.navigation').addClass('fixed');
 				} else { 
 				$('.navigation').removeClass('fixed');

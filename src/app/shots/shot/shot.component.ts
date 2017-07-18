@@ -12,7 +12,7 @@ import 'rxjs/add/operator/catch';
 @Component({
   selector: 'app-shot',
   templateUrl: './shot.component.html',
-  styleUrls: ['./shot.component.css']
+  styleUrls: ['./shot.component.scss']
 })
 export class ShotComponent implements OnInit {
 

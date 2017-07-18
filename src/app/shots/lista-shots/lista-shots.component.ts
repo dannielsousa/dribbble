@@ -7,7 +7,7 @@ import { Shots } from './../shots';
 @Component({
   selector: 'app-lista-shots',
   templateUrl: './lista-shots.component.html',
-  styleUrls: ['./lista-shots.component.css']
+  styleUrls: ['./lista-shots.component.scss']
   
 })
 export class ListaShotsComponent implements OnInit {

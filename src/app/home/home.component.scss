@@ -1,0 +1,50 @@
+@import "./../../assets/css/mains.scss";
+
+.left div:nth-child(2), 
+.right div:nth-child(2) {
+    float: left;
+    width: 59%;
+    margin-left: 11%;
+}
+
+.left i, 
+.right i {
+    font-size: 47px;
+    float: left;
+    margin-left: 5%;
+    margin-top: 6px;
+    color: #1a5c02;
+}
+
+hr {
+    border-top: 1px solid rgba(26, 92, 2, 0.3);
+}
+
+.kz_caixa_externa{
+    padding: 50px 0;
+
+    span {
+        display: block;
+        font-weight: bold
+    }
+}
+
+.kz_caixa {
+    width: 27%;
+    float: left;
+    margin-left: 20%;
+    margin-bottom: 20px;
+    padding: 10px;
+    &:hover {
+      border: 1px solid black;
+
+    } 
+}
+
+.setaleft {
+    margin: -5px 0 0 77px;
+}
+
+.setaright{
+    margin: -5px 0 0 442px;
+}

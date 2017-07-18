@@ -1,0 +1,97 @@
+@import './../assets/css/mains.scss';
+
+
+footer { 
+  background: rgba(26, 33, 25, 0.7);
+  border: 1px solid   rgba(26, 33, 25, 0.9);
+     
+}
+
+.kz_rodape img { 
+    display: inline-block; 
+    float: left; 
+    padding: 10px 0; 
+    width: 70px; 
+}
+
+.kz_rodape span { 
+    color: rgba(0, 0, 0, 0.5); 
+    float: left; 
+    font-size: 25px; 
+    margin: 36px 0 0 25px; 
+    transition: color 2s ease-out; 
+    -webkit-transition: color 2s ease-out; 
+    -moz-transition: color 2s ease-out; 
+
+    &:hover {
+        color: rgba(0, 0, 0, 1); 
+        cursor: default; 
+        text-decoration: underline; 
+    }
+}
+
+
+.kz_rodape a { 
+    color: rgba(0, 0, 0, 0.5); 
+    line-height: 1.8; 
+    margin-top: 10px; 
+    transition: color 2s ease-out;
+    -webkit-transition: color 2s ease-out;
+    -moz-transition: color 2s ease-out; 
+
+    &:hover {
+        color: rgba(0, 0, 0, 1); 
+        text-decoration: underline; 
+    }
+}
+
+
+.kz_rodape i::before{ 
+    margin-right: 10px;
+}
+
+.kz_rodape_direito {
+    margin-top: 20px;
+}
+
+.navbar {
+    border: none;
+}
+
+.navbar-default .navbar-brand, .nav a {
+    color: $branco !important;
+    font-size: 25px;
+}
+
+nav a:hover {
+    background: rgba(26, 33, 25, 0.9);
+} 
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    border: none;
+    background: rgba(26, 33, 25, 0.7);
+}
+
+
+.navigation {
+     background: rgba(26, 33, 25, 0.0);
+}
+
+.fixed {
+  background: rgba(26, 33, 25, 0.7);
+  border-radius: 0;
+  border: 1px solid rgba(26, 33, 25, 0.9);;
+  position: fixed;
+  transition: border 0.5s ease-out; 
+  width: 100%; 
+  z-index: 999;
+  -webkit-transition: border 0.5s ease-out; 
+  -moz-transition: border 0.5s ease-out; 
+}
+
+
+.imagem_menu {
+    background: url("./../assets/img/illidantopo.png");
+    width: 100%;
+    height: 540px;
+}
