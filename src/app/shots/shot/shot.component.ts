@@ -45,6 +45,7 @@ export class ShotComponent implements OnInit {
     this.encontrado = false;
     this.errorMessage = null;
     this.shotSelect = null;
+    this.shotEncontrado = null;
   }
 }
 
