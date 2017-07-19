@@ -1,0 +1,6 @@
+@mixin fTransition($rd) {
+    transition: $rd 1s ease-out; 
+    -webkit-transition: $rd 1s ease-out; 
+    -moz-transition: $rd 1s ease-out; 
+}
+

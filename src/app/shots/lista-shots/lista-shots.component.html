@@ -1,12 +1,16 @@
 <div class="row">
+    <div class="col-xs-12 text-center">
+        <span>Lista de Shots!</span>
+    </div>
+
+</div>
+<div class="row">
     <div class="col-md-4 text-center" *ngFor="let item of listaDeShots">
         <div class="item-fora ">
             <div class="hoverzoom">
-            <img class="item-dentro" src="{{item.images.normal}}"/>
-            <input type="hidden" name="" value="{{item.images.normal}}">
+                <img class="item-dentro" src="{{item.images.normal}}" />
+                <input type="hidden" name="" value="{{item.images.normal}}">
             </div>
         </div>
     </div>
 </div>
-
-

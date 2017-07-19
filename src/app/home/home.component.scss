@@ -20,31 +20,64 @@ hr {
     border-top: 1px solid rgba(26, 92, 2, 0.3);
 }
 
-.kz_caixa_externa{
-    padding: 50px 0;
+hr:nth-child(3) {
+    margin-top: 40px;
+}
 
+
+
+.kz_caixa_externa{
+    font-size: 1em;
     span {
         display: block;
-        font-weight: bold
+        font-weight: bold;
+        text-decoration: none;
+        @include fTransition(text-decoration);
     }
-}
 
-.kz_caixa {
-    width: 27%;
-    float: left;
-    margin-left: 20%;
-    margin-bottom: 20px;
-    padding: 10px;
-    &:hover {
-      border: 1px solid black;
-
+    span:first-child {
+        margin-bottom: 30px;
+        font-size: 1.4em;
     } 
 }
-
-.setaleft {
-    margin: -5px 0 0 77px;
+.kz_caixa_externa a {
+    color: black;
 }
 
-.setaright{
-    margin: -5px 0 0 442px;
+.kz_direita {
+        opacity: 1;
+    @include fTransition(opacity);
+}
+
+.kz_esquerda {
+        opacity: 1;
+    @include fTransition(opacity);
+
+}
+
+.kz_setaleft {
+    margin: -5px 0 0 72px;
+    @include fTransition(margin);
+}
+.kz_setaleftin {
+    margin-left: 44px;
+    @include fTransition(margin);
+}
+.kz_setaright{
+    margin: -5px 0 0 447px;
+    @include fTransition(margin);
+}
+.kz_setarightin {
+    margin-left: 475px;
+    @include fTransition(margin);
+}
+
+.kz_in {
+    text-decoration: underline;
+    @include fTransition(font);
+}
+
+.kz_out {
+    opacity: 0.1;
+    @include fTransition(opacity);
 }

@@ -1,12 +1,12 @@
 @import './_colors.scss';
 
   
-.arrow, .arrowLeft, .arrow:before, .arrowLeft:before {
+.kz_arrow, .kz_arrowLeft, .kz_arrow:before, .kz_arrowLeft:before {
   position: absolute;
   //left: 50%;
 }
 
-.arrow {
+.kz_arrow {
   width: 30px;
   height: 30px;
   top: 50%;
@@ -19,7 +19,7 @@
 }
 
   
-.arrow:before{
+.kz_arrow:before{
   content: '';
   width: 20px;
   height: 20px;
@@ -31,10 +31,10 @@
   border-bottom: none;
   animation-duration: 1s;
   animation-iteration-count: infinite;
-  animation-name: arrow;
+  animation-name: kz_arrow;
 }
 
-.arrowLeft {
+.kz_arrowLeft {
   width: 30px;
   height: 30px;
   top: 50%;
@@ -47,7 +47,7 @@
   
 }
 
-.arrowLeft:before{
+.kz_arrowLeft:before{
   content: '';
   width: 20px;
   height: 20px;
@@ -59,12 +59,12 @@
   border-bottom: 1px $verde solid;
   animation-duration: 1s;
   animation-iteration-count: infinite;
-  animation-name: arrowLeft;
+  animation-name: kz_arrowLeft;
 
   
 }
   
-@keyframes arrow{
+@keyframes kz_arrow{
     0%{
         opacity: 1;
     }
@@ -74,7 +74,7 @@
   }
 }
 
-@keyframes arrowLeft{
+@keyframes kz_arrowLeft{
     0%{
         opacity: 1;
     }
