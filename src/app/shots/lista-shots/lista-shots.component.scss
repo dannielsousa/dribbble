@@ -1,6 +1,11 @@
 @import './../../../assets/css/mains.scss';
 
-.item-dentro { border-radius: 50%; height: 150px; margin: 20px; width: 150px; }
+.item-dentro { 
+	border-radius: 50%; 
+	height: 150px; 
+	margin: 27px; 
+	width: 150px; 
+}
 
 .hoverzoom > img {
 	-webkit-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);

@@ -1,21 +1,15 @@
 <div class="row">
 
     <div class="render text-center col-xs-12" *ngIf="shotEncontrado">
-        <img class="item-dentro" src="{{shotEncontrado.images.normal}}"/>
-        <button class="btn kz_voltar" (click)="limpaCampo()">Voltar</button>
+        <img class="item-dentro" src="{{shotEncontrado.images.normal}}" />
+        <button class="btn kz_voltar" (click)="goBack()">Voltar</button>
     </div>
 
     <div class="mensagemErro col-xs-12 text-center" *ngIf="errorMessage">
-        <img src="https://kmkz.000webhostapp.com/not_found.jpg"> 
-        <p class="error" >Erro ao pesquisar o shot: {{shotSelect}}!</p>
+        <img src="https://kmkz.000webhostapp.com/not_found.jpg">
+        <p class="error">Erro ao pesquisar o shot: {{shotSelect}}!</p>
         <p>Clique em voltar realize uma nova pesquisa!</p>
-        <button class="btn kz_voltar" (click)="limpaCampo()">Voltar</button>
-    </div>
-
-    <div class="col-xs-4 col-xs-offset-4 text-center kz_cxBusca" *ngIf="!encontrado" >
-        <span>Shot</span>
-        <input type="text" placeholder="Digite o id do Shot...." [(ngModel)]="shotSelect" required>
-        <button class="btn" (click)="buscarShot()"> Buscar </button>
+        <button class="btn kz_voltar" (click)="goBack()">Voltar</button>
     </div>
 
 </div>

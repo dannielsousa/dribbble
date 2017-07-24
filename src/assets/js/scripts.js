@@ -1,7 +1,5 @@
 
 $(document).ready(function() {
-
-alert("lalalal");
         var nav = $('.imagem_menu');
     $(window).scroll(function () {
         if ($(this).scrollTop() >= 150) {
