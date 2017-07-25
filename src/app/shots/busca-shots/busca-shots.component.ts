@@ -31,7 +31,7 @@ export class BuscaShotsComponent implements OnInit {
 
   }
 
-  gotoDet(): void {
+  gotoDetail(): void {
     this.router.navigate(['shots/buscaShots/', this.shotSelect]);
   }
  

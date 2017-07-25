@@ -9,10 +9,10 @@ import 'rxjs/add/observable/throw';
 @Injectable()
 export class ShotsService {
 
-  url = 'https://api.dribbble.com/v1/shots?access_token=2b1bda62785d323950b3a26829122a217d440ae6ddc931879f8fae57feb7d9a7';
+  url = 'https://api.dribbble.com/v1/shots?access_token=6e1c591eca8f4f774fb937c575c3eab5f9c0db768511c0590d046cb00d848aa6';
 
   api = 'https://api.dribbble.com/v1/shots/';
-  token = 'access_token=2b1bda62785d323950b3a26829122a217d440ae6ddc931879f8fae57feb7d9a7';
+  token = 'access_token=6e1c591eca8f4f774fb937c575c3eab5f9c0db768511c0590d046cb00d848aa6';
 
   private headers: Headers;
   private options: RequestOptions;
@@ -29,19 +29,7 @@ export class ShotsService {
     .catch(this.handleError)
   }
 
-  /*private handleError(error: Response) {
-    console.error(error);
-    return Observable.throw(error.json().error());
-
-  private handleError(error: Response | any) {
-    let errMsg = (error['_body']) ? JSON.parse(error['_body']).msg : 'Server error';
-    console.log(errMsg);
-    return Observable.throw(errMsg);
-  }
-
-  }*/
-  
-   private extractData(res: Response) {
+  private extractData(res: Response) {
     return res.json() || [];
   }
  

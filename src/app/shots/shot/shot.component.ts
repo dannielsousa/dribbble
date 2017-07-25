@@ -16,6 +16,10 @@ export class ShotComponent implements OnInit {
   errorMessage: any;
   shotEncontrado: any;
   encontrado: boolean = false;
+  tamanho: string = 'pequeno';
+  pequeno: any = null;
+  medio: any = null;
+  grande: any = null;
 
   constructor(
     private route: ActivatedRoute,
@@ -39,14 +43,17 @@ export class ShotComponent implements OnInit {
     this.shotsService.getOneShot(idShot)
       .subscribe(
       shotEncontrado => this.shotEncontrado = shotEncontrado,
-      error => this.errorMessage = <any>error
+      error => this.errorMessage = <any>error,
       );
     this.encontrado = true;
   }
 
-  goBack(): void {
+  voltar(): void {
     this.location.back();
-    console.log(this.location);
+  }
+
+  change(val): void {
+    this.tamanho = val;
   }
 }
 

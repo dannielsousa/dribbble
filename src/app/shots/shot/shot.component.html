@@ -1,15 +1,54 @@
 <div class="row">
-
-    <div class="render text-center col-xs-12" *ngIf="shotEncontrado">
-        <img class="item-dentro" src="{{shotEncontrado.images.normal}}" />
-        <button class="btn kz_voltar" (click)="goBack()">Voltar</button>
+    <div class="col-xs-12 text-center">
+        <button class="btn kz_voltar" (click)="voltar()">Voltar</button>
     </div>
+</div>
+<div class="row">
+    <div class="render text-center col-xs-12" *ngIf="shotEncontrado">
+        <div class="row">
+            <button class="btn change" (click)="change('pequeno')">Pequeno</button>
+            <button class="btn change" (click)="change('medio')">Médio</button>
+            <button class="btn change" (click)="change('grande')">Grande</button>
+        </div>
 
+        <div class="row">
+            <hr>
+            <p>Título: {{shotEncontrado.title}} </p>
+            <p>Likes: {{shotEncontrado.likes_count}} </p>
+            
+            <div *ngIf="tamanho == 'pequeno'">
+                <img class="item-dentro" src="{{shotEncontrado.images.teaser}}" />
+
+                <div *ngIf="shotEncontrado.images.teaser == null">
+                    <p>Shot não possui imagem de tamanho pequeno.</p>
+                </div>
+            </div>
+
+            <div *ngIf="tamanho == 'medio'">
+                <img class="item-dentro" src="{{shotEncontrado.images.normal}}" />
+
+                <div *ngIf="shotEncontrado.images.normal == null">
+                    <p>Shot não possui imagem de tamanho médio.</p>
+                </div>
+            </div>
+
+            <div *ngIf="tamanho == 'grande'">
+                <img class="item-dentro" src="{{shotEncontrado.images.hidpi}}" />
+
+                <div *ngIf="shotEncontrado.images.hidpi == null">
+                    <p>Shot não possui imagem de tamanho Grande.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="row">
     <div class="mensagemErro col-xs-12 text-center" *ngIf="errorMessage">
         <img src="https://kmkz.000webhostapp.com/not_found.jpg">
         <p class="error">Erro ao pesquisar o shot: {{shotSelect}}!</p>
         <p>Clique em voltar realize uma nova pesquisa!</p>
-        <button class="btn kz_voltar" (click)="goBack()">Voltar</button>
     </div>
-
+</div>
+<div class="row">
 </div>
