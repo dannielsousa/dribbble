@@ -11,50 +11,54 @@ footer {
     margin-top: 20px;
     margin-bottom: 20px;
 }
-.kz_rodape img { 
-    display: inline-block; 
-    float: left; 
-    padding: 10px 0; 
-    width: 70px; 
-}
 
-.kz_rodape span { 
-    color: rgba(0, 0, 0, 0.5); 
-    float: left; 
-    font-size: 25px; 
-    margin: 36px 0 0 25px; 
-    transition: color 2s ease-out; 
-    -webkit-transition: color 2s ease-out; 
-    -moz-transition: color 2s ease-out; 
+
+.kz_rodape {
+    span { 
+        color: rgba(0, 0, 0, 0.5); 
+        //float: left; 
+        font-size: 25px; 
+        margin: 36px 0 0 25px; 
+        transition: color 2s ease-out; 
+        -webkit-transition: color 2s ease-out; 
+        -moz-transition: color 2s ease-out; 
+    }
 
     &:hover {
         color: rgba(0, 0, 0, 1); 
         cursor: default; 
         text-decoration: underline; 
     }
-}
 
+    a { 
+        color: rgba(0, 0, 0, 0.5); 
+        line-height: 1.8; 
+        margin-top: 10px; 
+        transition: color 2s ease-out;
+        -webkit-transition: color 2s ease-out;
+        -moz-transition: color 2s ease-out; 
 
-.kz_rodape a { 
-    color: rgba(0, 0, 0, 0.5); 
-    line-height: 1.8; 
-    margin-top: 10px; 
-    transition: color 2s ease-out;
-    -webkit-transition: color 2s ease-out;
-    -moz-transition: color 2s ease-out; 
-
-    &:hover {
-        color: rgba(0, 0, 0, 1); 
-        text-decoration: underline; 
+        &:hover {
+            color: rgba(0, 0, 0, 1); 
+            text-decoration: underline; 
+        }
     }
+
+    
+    img { 
+        display: inline-block; 
+        //float: left; 
+        padding: 10px 0 0 0; 
+        width: 70px;
+    } 
 }
 
-.kz_rodape i::before{ 
-    margin-right: 10px;
-}
 
-.kz_rodape_direito {
-    margin-top: 20px;
+.kz_rodape_direito li {
+    list-style: none;
+    display: inline-block;
+    padding: 0 20px;
+    
 }
 
 .navbar {
@@ -68,7 +72,12 @@ footer {
 
 nav a:hover {
     background: rgba(26, 33, 25, 0.9);
-} 
+    text-decoration: underline;
+    @include fTransition(background);
+}
+
+
+
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
     border: none;
@@ -85,11 +94,13 @@ nav a:hover {
   border-radius: 0;
   border: 1px solid rgba(26, 33, 25, 0.9);;
   position: fixed;
-  transition: border 0.5s ease-out; 
   width: 100%; 
   z-index: 999;
-  -webkit-transition: border 0.5s ease-out; 
-  -moz-transition: border 0.5s ease-out; 
+  @include fTransition(border);
+  @include fTransition(background);
+  @include fTransition(display);
+  
+
 }
 
 
@@ -98,3 +109,4 @@ nav a:hover {
     width: 100%;
     height: 540px;
 }
+

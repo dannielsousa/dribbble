@@ -3,16 +3,14 @@
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-            aria-expanded="false"> </button>
           <a class="navbar-brand" routerLink="">Dribbble</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li routerLinkActive="active"><a routerLink="/shots/listaShots">Listar Shots</a></li>
-            <li routerLinkActive="active"><a routerLink="/shots/buscaShots">Buscar Shots</a></li>
+            <li routerLinkActive="active"><a class="kz_linkmenu" routerLink="/shots/listaShots">Listar Shots</a></li>
+            <li routerLinkActive="active"><a class="kz_linkmenu" routerLink="/shots/buscaShots">Buscar Shots</a></li>
           </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -22,7 +20,7 @@
   </div>
 
 
-<div class="container kz_geral">
+<div class="kz_geral container">
   <div class="row content"></div>
   <router-outlet></router-outlet>
 </div>
@@ -30,11 +28,13 @@
 <footer class="page-footer kz_rodape">
   <div class="container">
     <div class="row">
-      <div class="col-md-8 col-sm-12 ">
-        <img src="https://kmkz.000webhostapp.com/Horde.png" />
-        <span>For The Horde!</span>
+      <div class="col-xs-12 text-center">
+        <div class="div">
+          <img src="https://kmkz.000webhostapp.com/Horde.png" />
+          <span>For The Horde!</span>
+        </div>
       </div>
-      <div class="col-sx-l2 kz_rodape_direito">
+      <div class="col-xs-12 text-center kz_rodape_direito">
         <ul>
           <li><a href="https://github.com/dannielsousa"><i class="fa fa-github" aria-hidden="true"></i> dannielsousa</a></li>
           <li><a href="https://www.linkedin.com/in/dannielsousa/"><i class="fa fa-linkedin-square" aria-hidden="true"></i> Danniel F. Sousa</a></li>
