@@ -2,16 +2,13 @@
     <div class="col-xs-12 text-center">
         <span>Lista de Shots!</span>
     </div>
-
 </div>
 <div class="row">
     <div class="col-md-4 text-center" *ngFor="let item of listaDeShots">
-        <div class="item-fora ">
             <a class="hoverzoom" routerLink="/shots/buscaShots/{{item.id}} ">
                 <img class="item-dentro" src="{{item.images.normal}}" />
             </a>
             <p>{{item.title}}</p>
             <input type="hidden" name="" value="{{item.images.normal}}">
-        </div>
     </div>
 </div>

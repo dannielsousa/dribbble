@@ -1,29 +1,12 @@
 @import "./../../assets/css/mains.scss";
 
-.left div:nth-child(2), 
-.right div:nth-child(2) {
-    float: left;
-    width: 59%;
-    margin-left: 11%;
-}
-
-.left i, 
-.right i {
-    font-size: 47px;
-    float: left;
-    margin-left: 5%;
-    margin-top: 6px;
-    color: #1a5c02;
-}
-
 hr {
-    border-top: 1px solid rgba(26, 92, 2, 0.3);
+    @include hrDefault;
 }
 
 hr:nth-child(3) {
     margin-top: 40px;
 }
-
 
 
 .kz_caixa_externa{

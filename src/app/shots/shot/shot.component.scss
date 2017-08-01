@@ -1,12 +1,14 @@
 @import './../../../assets/css/mains.scss';
 
 span, input, button { 
-    display: block; 
-    margin: 0 auto;     
-    margin-bottom: 10px; 
+   @include spanInputButtonDefault;
+}
+
+span, p {
+    @include spanDefault;
 }
 button { 
-    background: #e7e7e7; 
+    background: $cinza; 
     border: 1px solid rgba(0, 0, 0, .2); 
     border-radius: 50px; 
     color: rgba(0, 0, 0, .2); 
@@ -16,7 +18,7 @@ button {
     -moz-transition: color 2s ease-out, border 2s ease-out; 
 
     &:hover {
-        background: #e7e7e7; 
+        background: $cinza; 
         border: 1px solid rgba(0, 0, 0, 1); 
         color: rgba(0, 0, 0, 1); 
         text-decoration: underline; 
@@ -27,8 +29,18 @@ button {
 }
 
 
-.mensagemErro img { height: 400px; width: 400px; border-radius: 50%; border: 1px solid $verde; }
+
+.kz_mensagemErro  img { height: 400px; width: 400px; border-radius: 50%; border: 1px solid $verde; }
 
 .btn { display: inline-block }
 
 .render img { margin: 10px auto }
+
+
+@media only screen and (max-width: 1049px){ 
+
+    .item-dentro {     
+        max-width: 60%;
+    }
+
+}

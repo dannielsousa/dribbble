@@ -1,10 +1,13 @@
 @import './../../../assets/css/mains.scss';
 
 span, input, button { 
-    display: block; 
-    margin: 0 auto;     
-    margin-bottom: 10px; 
+    @include spanInputButtonDefault;
 }
+
+span {
+    @include spanDefault
+}
+
 button { 
     background: #e7e7e7; 
     border: 1px solid rgba(0, 0, 0, .2); 
@@ -27,11 +30,10 @@ button {
 }
 
 .kz_cxBusca { 
-    margin-top: 10%; 
+    margin-top: 5%; 
     margin-bottom: 10%;
 }
 
 .kz_voltar { 
     margin-top: 20px; 
 }
-.mensagemErro img { height: 400px; width: 400px; }

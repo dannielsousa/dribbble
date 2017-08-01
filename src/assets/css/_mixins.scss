@@ -4,3 +4,19 @@
     -moz-transition: $rd 1s ease-out; 
 }
 
+@mixin spanDefault {
+   	font-size: 2em;
+    display: inline-block;
+    padding-bottom: 25px;
+    text-decoration: underline;
+}
+
+@mixin spanInputButtonDefault {
+    display: block; 
+    margin: 0 auto;     
+    margin-bottom: 10px; 
+}
+
+@mixin hrDefault {
+    border-top: 1px solid rgba(26, 92, 2, 0.3);
+}
