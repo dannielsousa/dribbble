@@ -12,6 +12,6 @@ npm start
 
 # Tecnologias utilizadas
 
-HTML, CSS/SASS, Angular 4, jQuery
+HTML, CSS/SASS, Angular 4
 
 
