@@ -10,7 +10,7 @@ npm install
 
 npm start
 
-# Tecnologias utiladas
+# Tecnologias utilizadas
 
 HTML, CSS/SASS, Angular 4, jQuery
 
