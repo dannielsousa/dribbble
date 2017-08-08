@@ -4,8 +4,12 @@ span, input, button {
    @include spanInputButtonDefault;
 }
 
-span, p {
+span {
     @include spanDefault;
+}
+
+p {
+    @include pDefault;
 }
 button { 
     background: $cinza; 
